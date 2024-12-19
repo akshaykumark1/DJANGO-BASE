@@ -11,4 +11,11 @@ def files(request):
     feeds=Imgupload.objects.all()
     return render(request,'index.html',{'feeds':feeds})
 
+def delete(request,pk):
+    de=Imgupload.objects.get(pk=pk)
+    de.delete()
+    return redirect(files)
+
+    
+
 

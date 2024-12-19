@@ -16,8 +16,11 @@
     {% if feed.main_image %}
 
     <img src="{{ feed.main_image.url }}" height="200" width="200">
+    <a href="{% url 'delete' feed.id %}"><button>delete</button></a>
     {% else %}
     <p>no image available</p>
+    <a href="{% url 'delete' feed.id %}"><button>delete</button></a>
+
     {% endif %}
     {% endfor %}
 </body>
