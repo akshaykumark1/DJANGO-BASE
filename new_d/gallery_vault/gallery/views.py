@@ -29,4 +29,7 @@ def delete(request,pk):
         image.delete()
         return redirect(user_gallery)
 
+
+def login_user(req):
+    return render (req,'login.html')
  
