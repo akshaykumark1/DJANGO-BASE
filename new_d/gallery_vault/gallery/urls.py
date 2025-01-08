@@ -8,7 +8,9 @@ urlpatterns = [
     path('user_gallery', views.user_gallery, name='user_gallery'),
     path('upload/', views.upload_image, name='upload_image'),
     path('delete/<pk>', views.delete, name='delete'),
-    path('',views.login_user,name='login')
+    path('',views.login_user,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('logout',views.logout_g,name='logout_g'),
 
 ]
 if settings.DEBUG:

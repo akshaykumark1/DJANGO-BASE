@@ -8,7 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style2.css' %}">
+<style>
+    
+button{
+    background-color: #fb641b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
 
+button:hover {
+    background-color: #e29016;
+}
+</style>
 
     
 </head>
@@ -25,7 +43,7 @@
         {% endfor %}
         {% endif %}
 
-        <form action="" method="post">
+        <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             <div class="input-group">
                 <label for="username">Username</label>
@@ -35,9 +53,9 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" >
             </div>
-            <a id="login" href="user_gallery">login</a>
+            <button class="login">login</button>
         </form>
-        <a id="Signup" href="Signup">Sign up</a>
+        <a id="Signup" href="{% url 'signup' %}">Sign up</a>
         <a class="forgot-password" href="#">Forgot Password?</a>
     </div>
 </body>
